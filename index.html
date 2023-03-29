@@ -5,16 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
     <title>Proyecto 2 - CRUD Javascript</title>
   </head>
   <body>
     <header>
-      <nav></nav>
-    </header>
+      <nav>
+        <input type="checkbox" id="nav-check" />
+        <div class="nav-header">
+          <div class="nav-title">CRUD - Javascript</div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
 
-    <section></section>
+        <div class="nav-links">
+          <a href="#">Pages</a>
+          <a href="#">User</a>
+          <a href="#">Trends</a>
+          <a href="#">Settings</a>
+          <a href="#">Options</a>
+        </div>
+      </nav>
+    </header>
+    <!-- contenedor -->
+    <section class="hero__main container">
+      <div class="hero__texts">
+        <h1 class="hero__title">Registra tus ventas</h1>
+        <p class="hero__subtitle">
+          Completa los datos para registrar tus clientes, generar acción y
+          seguimiento de tus ventas.
+        </p>
+        <a href="#" class="hero__cta">Registrar</a>
+      </div>
+
+      <figure class="hero__picture">
+        <img
+          src="./assets/img/undraw_online_test_re_kyfx.svg"
+          class="hero__img"
+        />
+      </figure>
+    </section>
+
+    <section class="modal">
+      <div class="modal__container">
+        <img
+          src="./assets/img/undraw_fill_form_re_cwyf.svg"
+          class="modal__img"
+        />
+        <h2 class="modal__title">CRUD</h2>
+        <form action="" method="post">
+          <p>Nombre Cliente</p>
+          <input type="text" placeholder="Nombre" />
+
+          <p>Producto</p>
+          <select name="products" id="product">
+            <option value="Gas">Gas</option>
+            <option value="Agua">Agua</option>
+          </select>
+
+          <p>Fecha Compra</p>
+          <input type="date" name="datetime" id="in_datetime" />
+          <p>Fecha Seguimiento</p>
+          <input type="date" name="datetime" id="seg_datetime" />
+
+          <textarea
+            class="textarea"
+            name="obs"
+            placeholder="Observación"
+            data-dl-input-translation="true"
+          ></textarea>
+
+          <a href="#" class="modal__save">Guardar</a>
+          <a href="#" class="modal__clear">Limpiar</a>
+        </form>
+        <a href="#" class="modal__close">Cerrar Modal</a>
+      </div>
+    </section>
+
+    <!-- Tabla de datos -->
 
     <footer></footer>
 
