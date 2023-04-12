@@ -54,46 +54,60 @@
 
     <section class="modal">
       <div class="modal__container">
-        <a href="#" class="modal__close">X</a>
-        <img
-          src="./assets/img/undraw_fill_form_re_cwyf.svg"
-          class="modal__img"
-        />
+        
         <h2 class="modal__title">Registro</h2>
-        <form action="" method="post">
-          <p>Nombre Cliente</p>
-          <input type="text" placeholder="Nombre" />
 
-          <p>Producto</p>
-          <select name="products" id="product">
-            <option value="Gas">Gas</option>
-            <option value="Agua">Agua</option>
+        <!-- Form -->
+
+        <form>
+          
+          <label for="Nombre">Nombre</label>
+          <input id="Nombre" type="text" placeholder="Nombre" />
+        </tr>
+        <tr>
+          <label for="Apellido">Apellido</label>
+          <input id="Apellido" type="text" placeholder="Apellido" />
+        
+          <label for="Email">Email</label>
+          <input id="Email" type="email" placeholder="Email" />
+
+          <label for="select">Productos</label>
+          <select id="select" name="select">
+            <option disabled selected>Seleccione</option>
+            <option value="value1">Producto 1</option>
+            <option value="value2">Producto 2</option>
+            <option value="value3">Producto 3</option>
           </select>
 
-          <p>Fecha Compra</p>
-          <input type="date" name="datetime" id="in_datetime" />
-          <p>Fecha Seguimiento</p>
-          <input type="date" name="datetime" id="seg_datetime" />
+          <label for="fecini">Fecha Compra</label>
+          <input id="fecini" type="date" class="fecini" />
 
-          <p>Observación</p>
+          <label for="fecseg">Fecha Seguimiento</label>
+          <input id="fecseg" type="date" class="fecseg" />
+
+          <label for="comentario">Comentario</label>
           <textarea
-            class="textarea"
-            name="obs"
-            placeholder="Observación"
-            data-dl-input-translation="true"
+            id="comentario"
+            name="comentario"
+            rows="5"
+            cols="20"
+            placeholder="Escriba aquí sus observaciones"
           ></textarea>
 
-          <a href="#" class="modal__save">Guardar</a>
-          <a href="#" class="modal__clear">Limpiar</a>
+          <button type="submit">Agregar</button>
+
+          <a href="#" class="modal__close">X</a>
         </form>
-       
       </div>
     </section>
 
     <!-- Tabla de datos -->
 
+    <table border="1" id="lista"></table>
+
     <footer></footer>
 
     <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>
