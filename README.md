@@ -1,6 +1,6 @@
 # Proyecto 2
 
-##CRUD HTML y JS
+## CRUD HTML y JS
 
 ### Descripción
 
