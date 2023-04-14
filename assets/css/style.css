@@ -164,9 +164,8 @@ nav > #nav-check {
   grid-area: content;
   display: grid;
   gap: 2em;
-  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
   grid-template-columns: 1fr 1fr;
-  padding-bottom: 180px;
+  padding-bottom: 10px;
   align-items: center;
 }
 
@@ -208,6 +207,7 @@ nav > #nav-check {
 }
 
 .modal {
+  z-index: 1;
   position: fixed;
   display: flex;
   top: 0;
@@ -241,29 +241,24 @@ nav > #nav-check {
   padding: 3em 2.5em;
   gap: 5em; */
 
-  .modal__container {
-    display: flex;
-    margin: auto;
+.modal__container {
+  display: flex;
+  margin: auto;
 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
 
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 3em 2.5em;
 
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 3em 2.5em;
- 
-  
-
-  /* grid-auto-columns: 100%; */
   transform: var(--transform);
   transition: var(--transition);
 }
 
 .modal__title {
-
   font-size: 2rem;
 }
 
@@ -273,7 +268,7 @@ nav > #nav-check {
 
 .modal__close {
   display: flex;
-  align-self:flex-end;
+  align-self: flex-end;
   max-width: 40px;
   max-height: 40px;
 
@@ -333,28 +328,53 @@ button[type="submit"]:hover {
   background-color: #45a049;
 }
 
-
-
 @media (max-width: 768px) {
- 
+  .hero__main {
+    grid-area: content;
+    display: block;
+    gap: 2em;
+
+    text-align: center;
+  }
 
   .modal__container {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    max-height: 70vh; 
-gap: 0;
+    max-height: 70vh;
+    gap: 0;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-
   }
-  .modal__close{
+  .modal__close {
     align-self: flex-end;
-    
-    
-    
   }
   .modal__title {
     font-size: 2rem;
   }
+}
+
+footer {
+  color: white;
+  background-color: #4d4d4d;
+  width: 100%;
+  height: 8em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.section_1,
+.section_2,
+.section_3 {
+  margin-top: 20px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+}
+.section_2 a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
 }
