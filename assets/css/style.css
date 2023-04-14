@@ -51,7 +51,7 @@ nav > #nav-check {
   display: none;
 }
 /************************RESPONSIVE NAVBAR************************/
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   nav > .nav-btn {
     display: inline-block;
     position: absolute;
