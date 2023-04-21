@@ -29,20 +29,27 @@ function create(event) {
 
 // Leer formulario
 function readForm() {
-  const nombreInput = document.getElementById("nombre");
-  const montoInput = document.getElementById("monto");
-  const fechaInput = document.getElementById("fecha");
-  const obsInput = document.getElementById("obs");
+  // const nombreInput = document.getElementById("nombre");
+  // const montoInput = document.getElementById("monto");
+  // const fechaInput = document.getElementById("fecha");
+  // const obsInput = document.getElementById("obs");
 
-  const cuenta = {
-    nombre: nombreInput.value,
-    monto: montoInput.value,
-    fecha: fechaInput.value,
-    obs: obsInput.value,
-    id: Date.now(),
-  };
+  // const cuenta = {
+  //   nombre: nombreInput.value,
+  //   monto: montoInput.value,
+  //   fecha: fechaInput.value,
+  //   obs: obsInput.value,
+  //   id: Date.now(),
+  // };
 
-  return cuenta;
+  // return cuenta;
+
+  const { value: nombre } = document.getElementById("nombre");
+  const { value: monto } = document.getElementById("monto");
+  const { value: fecha } = document.getElementById("fecha");
+  const { value: obs } = document.getElementById("obs");
+
+  return { nombre, monto, fecha, obs, id: Date.now() };
 }
 
 // Crear tabla
@@ -57,8 +64,8 @@ function createRow(cuenta) {
     <td>${cuenta.fecha}</td>
     <td>${cuenta.obs}</td>
 <td>
-<button class="edit" onclick="editTask (${cuenta.id})">Editar</button>
-<button class="delete" onclick="deleteTask(${cuenta.id})" >Eliminar</button>
+<button class="edit btn btn-secondary" onclick="editTask (${cuenta.id})">Editar</button>
+<button class="delete btn btn-danger" onclick="deleteTask(${cuenta.id})" >Eliminar</button>
 </td>
 </tr>
 `;
@@ -72,8 +79,13 @@ function clearForm() {
 
 //Guardar Local Storage
 function saveDataLs() {
-  localStorage.setItem("cuentas", JSON.stringify(cuentas));
-  location.reload();
+  try {
+    localStorage.setItem("cuentas", JSON.stringify(cuentas));
+    location.reload();
+  } catch (error) {
+    console.error(error);
+    alert("Error al guardar los datos en el almacenamiento local.");
+  }
 }
 
 // Eliminar datos
@@ -135,8 +147,8 @@ function update(event) {
     <td>${valores.fecha}</td>
     <td>${valores.obs}</td>
 <td>
-<button class="edit" onclick="editTask (${valores.id})">Editar</button>
-<button class="delete" onclick="deleteTask(${valores.id})" >Eliminar</button>
+<button class="edit btn btn-secondary" onclick="editTask (${valores.id})">Editar</button>
+<button class="delete btn btn-danger" onclick="deleteTask(${valores.id})" >Eliminar</button>
 </td>
   `;
 
