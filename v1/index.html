@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <title>Proyecto 2 - CRUD Javascript</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <input type="checkbox" id="nav-check" />
+        <div class="nav-header">
+          <div class="nav-title">CRUD - Javascript</div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+
+        <div class="nav-links">
+          <a href="#">Pages</a>
+          <a href="#">User</a>
+          <a href="#">Trends</a>
+          <a href="#">Settings</a>
+          <a href="#">Options</a>
+        </div>
+      </nav>
+    </header>
+    <!-- contenedor -->
+    <section class="hero__main container">
+      <div class="hero__texts">
+        <h1 class="hero__title">Registra tus ventas</h1>
+        <p class="hero__subtitle">
+          Completa los datos para registrar tus clientes, generar acción y
+          seguimiento de tus ventas.
+        </p>
+        <a href="#" class="hero__cta">Registrar</a>
+      </div>
+
+      <figure class="hero__picture">
+        <img
+          src="./assets/img/undraw_online_test_re_kyfx.svg"
+          class="hero__img"
+        />
+      </figure>
+    </section>
+
+    <section class="modal">
+      <div class="modal__container">
+        <a href="#" class="modal__close">X</a>
+        <h2 class="modal__title">Registro</h2>
+
+        <!-- Form -->
+
+        <form>
+          <label for="Nombre">Nombre</label>
+          <input id="Nombre" type="text" placeholder="Nombre" />
+
+          <label for="Apellido">Apellido</label>
+          <input id="Apellido" type="text" placeholder="Apellido" />
+
+          <label for="Email">Email</label>
+          <input id="Email" type="email" placeholder="Email" />
+
+          <label for="select">Productos</label>
+          <select id="select" name="select">
+            <option disabled selected>Seleccione</option>
+            <option value="value1">Producto 1</option>
+            <option value="value2">Producto 2</option>
+            <option value="value3">Producto 3</option>
+          </select>
+
+          <label for="fecini">Fecha Compra</label>
+          <input id="fecini" type="date" class="fecini" />
+
+          <label for="fecseg">Fecha Seguimiento</label>
+          <input id="fecseg" type="date" class="fecseg" />
+
+          <label for="comentario">Comentario</label>
+          <textarea
+            id="comentario"
+            name="comentario"
+            rows="5"
+            cols="20"
+            placeholder="Escriba aquí sus observaciones"
+          ></textarea>
+
+          <button type="submit">Agregar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Tabla de datos -->
+
+    <table border="1" id="lista"></table>
+
+    <footer>
+      <div class="section_1"></div>
+      <div class="section_2">
+        <div class="nav-links_foot">
+          <a href="#">Pages</a>
+          <a href="#">User</a>
+          <a href="#">Trends</a>
+          <a href="#">Settings</a>
+          <a href="#">Options</a>
+        </div>
+      </div>
+      <div class="section_3">
+        <p>Contáctanos a <strong>crud@proyecto2.cl</strong></p>
+      </div>
+    </footer>
+
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>

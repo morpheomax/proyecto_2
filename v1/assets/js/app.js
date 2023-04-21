@@ -1,9 +1,6 @@
 const form = document.querySelector("form");
 const lista = document.querySelector("#lista");
 
-// Se intenta obtener los datos almacenados en localStorage
-let datos = JSON.parse(localStorage.getItem("datos")) || [];
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const nombre = event.target[0].value;
@@ -229,3 +226,13 @@ function eliminarItem(item) {
   // Se guarda los datos actualizados en localStorage
   localStorage.setItem("datos", JSON.stringify(datos));
 }
+
+//Leer localStorage para mostrar al cargar la web
+function readFromLS() {
+  datos = JSON.parse(localStorage.getItem("datos")) || [];
+
+  // const datos = JSON.parse(localStorage.getItem("datos"));
+  // datos.forEach((el) => createRow(el));
+}
+
+readFromLS();
