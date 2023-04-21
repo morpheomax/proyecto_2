@@ -4,12 +4,21 @@
   font-family: "Schibsted Grotesk", sans-serif;
 }
 
-.data {
+.label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
 }
-
 .fromulario {
   display: flex;
   align-items: center;
   justify-content: center;
   width: auto;
+}
+
+.modal {
+  text-align: center;
+}
+.presupuesto {
+  text-align: center;
 }

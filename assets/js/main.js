@@ -60,7 +60,7 @@ function createRow(cuenta) {
     <tr id="${cuenta.id}">
     <td>${cuenta.id}</td>
     <td>${cuenta.nombre}</td>
-    <td>${cuenta.monto}</td>
+    <td>${Intl.NumberFormat('de-DE').format(cuenta.monto)}</td>
     <td>${cuenta.fecha}</td>
     <td>${cuenta.obs}</td>
 <td>
@@ -174,6 +174,6 @@ let totalSaldo = 0;
 cuentas.forEach(function (el) {
   totalSaldo += parseInt(el.monto);
 
-  document.getElementById("saldo").value = totalSaldo;
-  document.getElementById("saldo").textContent = totalSaldo;
+
+  document.getElementById("saldo").textContent = Intl.NumberFormat('de-DE').format(totalSaldo);
 });
