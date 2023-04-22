@@ -68,9 +68,12 @@ function createRow(cuenta) {
 <button class="edit btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="editTask (${
     cuenta.id
   })">Editar</button>
-<button class="delete btn btn-danger" onclick="deleteTask(${
+<button class="delete btn btn-danger"  onclick="deleteTask(${
     cuenta.id
   })" >Eliminar</button>
+  
+  
+  
 </td>
 </tr>
 `;
@@ -184,3 +187,26 @@ cuentas.forEach(function (el) {
   document.getElementById("saldo").textContent =
     Intl.NumberFormat("de-DE").format(totalSaldo);
 });
+
+
+
+
+const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+const appendAlert = (message, type) => {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = [
+    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>'
+  ].join('')
+
+  alertPlaceholder.append(wrapper)
+}
+
+const alertTrigger = document.getElementById('liveAlertBtn')
+if (alertTrigger) {
+  alertTrigger.addEventListener('click', () => {
+    appendAlert('Nice, you triggered this alert message!', 'success')
+  })
+}
