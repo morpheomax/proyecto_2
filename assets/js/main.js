@@ -60,12 +60,17 @@ function createRow(cuenta) {
     <tr id="${cuenta.id}">
     <td>${cuenta.id}</td>
     <td>${cuenta.nombre}</td>
-    <td>${Intl.NumberFormat('de-DE').format(cuenta.monto)}</td>
+    <td>${Intl.NumberFormat("de-DE").format(cuenta.monto)}</td>
     <td>${cuenta.fecha}</td>
     <td>${cuenta.obs}</td>
 <td>
-<button class="edit btn btn-secondary" onclick="editTask (${cuenta.id})">Editar</button>
-<button class="delete btn btn-danger" onclick="deleteTask(${cuenta.id})" >Eliminar</button>
+
+<button class="edit btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="editTask (${
+    cuenta.id
+  })">Editar</button>
+<button class="delete btn btn-danger" onclick="deleteTask(${
+    cuenta.id
+  })" >Eliminar</button>
 </td>
 </tr>
 `;
@@ -104,11 +109,12 @@ function deleteTask(id) {
 // Editar datos
 function editTask(id) {
   //cambio nombre de Boton Guardar a Actualizar mientras me encuentro en Edición
+
   editMode = true;
   addButton.innerText = "Actualizar";
   editionId = id;
   // cambio de color fila en edicion
-  document.getElementById(id).style.backgroundColor = "red";
+  document.getElementById(id).style.backgroundColor = "rgb(255, 249, 222)";
 
   const cuenta = cuentas.find((cuenta) => cuenta.id === id);
   const idInput = document.getElementById("id");
@@ -147,7 +153,8 @@ function update(event) {
     <td>${valores.fecha}</td>
     <td>${valores.obs}</td>
 <td>
-<button class="edit btn btn-secondary" onclick="editTask (${valores.id})">Editar</button>
+
+<button class="edit btn btn-secondary"  onclick="editTask (${valores.id} )">Editar</button>
 <button class="delete btn btn-danger" onclick="deleteTask(${valores.id})" >Eliminar</button>
 </td>
   `;
@@ -174,6 +181,6 @@ let totalSaldo = 0;
 cuentas.forEach(function (el) {
   totalSaldo += parseInt(el.monto);
 
-
-  document.getElementById("saldo").textContent = Intl.NumberFormat('de-DE').format(totalSaldo);
+  document.getElementById("saldo").textContent =
+    Intl.NumberFormat("de-DE").format(totalSaldo);
 });
